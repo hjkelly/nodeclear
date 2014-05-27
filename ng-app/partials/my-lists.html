@@ -1,0 +1,6 @@
+<ul class="lists">
+    <li ng-repeat="list in lists">
+        <a href="/lists/{{list._id}}">{{list.name}}</a>
+        <span>{{list.items.length}}</span>
+    </li>
+</ul>

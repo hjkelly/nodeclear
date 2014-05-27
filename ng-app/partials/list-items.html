@@ -1,0 +1,14 @@
+<a href="/lists">Back to lists</a>
+
+<ul class="list-items">
+    <li ng-repeat="item in list.items"
+        ng-class="{completed: item.completed}">
+        <input type="text" ng-model="item.label" ng-change="updateList()" />
+        <a href="#" ng-click="removeItem(item)">&#x2716;</a>
+    </li>
+    <li class="newItem">
+        <form ng-submit="addItem(newItemLabel)">
+            <input type="text" ng-model="newItemLabel" />
+            <input type="submit" value="Add" />
+        </form>
+</ul>

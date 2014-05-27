@@ -13,6 +13,9 @@ lib-cov
 # Coverage directory used by tools like istanbul
 coverage
 
+# Bower installs
+bower_components
+
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
 
@@ -23,3 +26,9 @@ build/Release
 # Deployed apps should consider commenting this line out:
 # see https://npmjs.org/doc/faq.html#Should-I-check-my-node_modules-folder-into-git
 node_modules
+
+# MongoDB stuff
+data
+
+# OS stuff
+.DS_Store

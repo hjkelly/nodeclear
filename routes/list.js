@@ -56,6 +56,7 @@ exports.info = function(req, res) {
 exports.update = function(req, res) {
     var id = new BSON.ObjectID(req.params.id);
     var list = req.body;
+    list._id = id;
     console.log("\nUPDATE " + id + " with " + JSON.stringify(list));
     db.collection('lists', function(err, collection) {
         collection.update({'_id': id}, list, {safe:true}, function(err, result) {
