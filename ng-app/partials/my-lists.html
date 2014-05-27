@@ -3,4 +3,10 @@
         <a href="/lists/{{list._id}}">{{list.name}}</a>
         <span>{{list.items.length}}</span>
     </li>
+    <li>
+        <form ng-submit="addList(newListName)">
+            <input type="text" placeholder="New List Name" ng-model="newListName" />
+            <input type="submit" value="Create" />
+        </form>
+    </li>
 </ul>

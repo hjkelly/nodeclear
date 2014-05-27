@@ -2,26 +2,43 @@
 
 var controllers = angular.module('nodeclear.controllers', []);
 
-controllers.controller('MyListsCtrl', ['$scope', 'Lists', function ($scope, Lists) {
-  $scope.lists = Lists.myLists();
+// LISTS =======================================================================
+controllers.controller('MyListsCtrl', ['$scope', 'List', function ($scope, List) {
+  $scope.lists = List.myLists();
+
+  $scope.addList = function(name) {
+    var newList = new List({name: name, items: []});
+    newList.$save();
+    // Update the lists.
+    $scope.lists = List.myLists();
+    // Reset the form.
+    $scope.newListName = '';
+  };
 }]);
 
-controllers.controller('MyListItemsCtrl', ['$scope', 'Lists', '$routeParams', function ($scope, Lists, $routeParams) {
-  $scope.list = Lists.get({id: $routeParams.id});
+// ITEMS =======================================================================
+controllers.controller('MyListItemsCtrl', ['$scope', 'List', '$routeParams', function ($scope, List, $routeParams) {
+  $scope.list = List.get({id: $routeParams.id});
+  if (!$scope.list.items) {
+    $scope.list.items = [];
+  }
 
   $scope.updateList = function() {
-    Lists.save($scope.list);
+    List.save($scope.list);
   };
 
   $scope.addItem = function(label) {
+    if (!$scope.list.items) {
+      $scope.list.items = [];
+    }
     $scope.list.items.push({'label': label});
-    Lists.save($scope.list);
+    List.save($scope.list);
     $scope.newItemLabel = '';
   };
 
   $scope.removeItem = function(item) {
     var index = $scope.list.items.indexOf(item);
     $scope.list.items.splice(index,1);
-    Lists.save($scope.list);
+    List.save($scope.list);
   };
 }]);

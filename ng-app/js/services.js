@@ -2,7 +2,7 @@
 
 var services = angular.module('nodeclear.services', ['ngResource']);
 
-services.factory('Lists', ['$resource',
+services.factory('List', ['$resource',
   function($resource){
     return $resource('/api/lists/:id',
       {id: '@_id'},
