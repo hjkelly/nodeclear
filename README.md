@@ -1,7 +1,7 @@
 nodeclear
 =========
 
-A web-based Clear.app, using Node.js/Express+MongoDB for the API and AngularJS+Compass for the UI.
+A web-based imitation of Clear (see http://realmacsoftware.com/clear) that uses Node.js/Express+MongoDB for the API and AngularJS+Compass for the UI.
 
 **Why?** I wanted to get my feet wet in some new technologies, and I think Clear is an amazing app.
 
