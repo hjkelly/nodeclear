@@ -3,7 +3,7 @@ nodeclear
 
 A web-based Clear.app, using Node.js/Express+MongoDB for the API and AngularJS+Compass for the UI.
 
-**$Why?** I wanted to get my feet wet in some new technologies, and I think Clear is an amazing app.
+**Why?** I wanted to get my feet wet in some new technologies, and I think Clear is an amazing app.
 
 ## What's finished, and what's not?
 
