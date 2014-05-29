@@ -13,8 +13,8 @@ lib-cov
 # Coverage directory used by tools like istanbul
 coverage
 
-# Bower installs
-bower_components
+# Compass/Sass
+.sass-cache
 
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt

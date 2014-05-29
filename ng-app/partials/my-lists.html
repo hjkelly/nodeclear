@@ -1,12 +1,29 @@
-<ul class="lists">
-    <li ng-repeat="list in lists">
-        <a href="/lists/{{list._id}}">{{list.name}}</a>
-        <span>{{list.items.length}}</span>
-    </li>
-    <li>
-        <form ng-submit="addList(newListName)">
-            <input type="text" placeholder="New List Name" ng-model="newListName" />
-            <input type="submit" value="Create" />
-        </form>
-    </li>
-</ul>
+<header>
+    <h1>My Lists</h1>
+</header>
+
+<article class="list list--my-lists">
+    <form class="list__row"
+        id="list-{{list._id}}"
+        ng-repeat="list in lists"
+        ng-submit="updateList(list)"
+        ng-class="{isBeingEdited: listBeingEdited == list}">
+
+        <a class="label" href="/lists/{{list._id}}">{{list.name}}</a>
+        <input type="text" ng-model="list.name" />
+        <menu>
+            <a href="#" title="Edit" ng-click="giveListFocus(list)">&#x270e;</a>
+            <a href="#" title="Delete" ng-click="deleteList(list)">&#x2716;</a>
+        </menu>
+
+    </form>
+    <form class="list__row list__row--blank"
+        ng-submit="createList(newListName)">
+
+        <input type="text" placeholder="Create New List" ng-model="newListName" />
+        <menu>
+            <a href="#" ng-click="createItem(newItemLabel)">&#x2b;</a>
+        </menu>
+
+    </form>
+</article>

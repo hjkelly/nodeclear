@@ -8,8 +8,6 @@ services.factory('List', ['$resource',
       {id: '@_id'},
       {
         myLists: {method:'GET', isArray:true},
-        createList: {method:'POST'},
-        updateList: {method:'POST'},
         deleteList: {method:'DELETE'}
       });
   }]);

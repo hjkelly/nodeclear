@@ -1,30 +1,118 @@
-/* app css stylesheet */
-
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+/* line 3, ../sass/app.scss */
+body {
+  background-color: black;
+  font-size: 1.25em;
 }
 
-.menu:before {
-  content: "[";
+/* line 12, ../sass/app.scss */
+a {
+  color: white;
+  text-decoration: none;
 }
 
-.menu:after {
-  content: "]";
+/* line 17, ../sass/app.scss */
+header {
+  padding: 10px 13px;
+  background-color: #666;
+  position: relative;
+}
+/* line 22, ../sass/app.scss */
+header h1 {
+  color: white;
+  font-size: inherit;
+  margin: 0;
+  text-align: center;
+}
+/* line 29, ../sass/app.scss */
+header .nav {
+  padding: 10px 13px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+/* line 35, ../sass/app.scss */
+header .nav--right {
+  left: auto;
+  right: 0;
 }
 
-.menu > li {
-  display: inline;
-}
-
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
-
-.menu > li:nth-child(1):before {
-  content: "";
+/* line 41, ../sass/app.scss */
+.list {
+  list-style-type: none;
   padding: 0;
+  margin: 0;
+}
+
+/* line 47, ../sass/app.scss */
+.list__row {
+  padding: 10px 13px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: table;
+  width: 100%;
+  /* when there are both a link and an input, hide the input initially */
+  /* only ever show a.label or input at any given time...
+     and always, for the blank row */
+}
+/* line 53, ../sass/app.scss */
+.list__row a.label, .list__row input, .list__row menu {
+  display: table-cell;
+  vertical-align: top;
+}
+/* line 57, ../sass/app.scss */
+.list__row input {
+  background-color: transparent;
+  border: 0;
+  color: white;
+  padding: 0;
+  width: 100%;
+}
+/* line 64, ../sass/app.scss */
+.list__row input:focus {
+  outline: 0;
+}
+/* line 69, ../sass/app.scss */
+.list__row a.label + input {
+  display: none;
+}
+/* line 72, ../sass/app.scss */
+.list__row menu {
+  max-width: 100px;
+  text-align: right;
+}
+/* line 76, ../sass/app.scss */
+.list__row menu a {
+  display: inline-block;
+  margin-left: 8px;
+}
+/* line 86, ../sass/app.scss */
+.list__row.list__row--blank a.label, .list__row.isBeingEdited a.label {
+  display: none;
+}
+/* line 87, ../sass/app.scss */
+.list__row.list__row--blank input, .list__row.isBeingEdited input {
+  display: table-cell;
+}
+
+/* line 91, ../sass/app.scss */
+.list--my-lists .list__row {
+  background-color: #246;
+}
+/* line 94, ../sass/app.scss */
+.list--my-lists .list__row:hover, .list--my-lists .list__row.isBeingEdited {
+  background-color: #369;
+}
+
+/* line 100, ../sass/app.scss */
+.list--list-items .list__row {
+  background-color: #800;
+}
+/* line 103, ../sass/app.scss */
+.list--list-items .list__row:hover, .list--list-items .list__row.has-focus {
+  background-color: #b00;
+}
+/* line 107, ../sass/app.scss */
+.list--list-items .list__row:first-child {
+  background-color: #d00;
 }
