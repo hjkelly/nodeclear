@@ -7,7 +7,7 @@ A web-based Clear.app, using Node.js/Express+MongoDB for the API and AngularJS+C
 
 ## What's finished, and what's not?
 
-**Testing:** Because this is my first experiment in Node/Express, and my first non-tutorial venture into AngularJS, I didn't follow my normal test-driven development approach. To me, TDD kind of goes hand-in-hand with planning, and I didn't know enough about where my code would end up to test.
+**Testing:** Because this is my first experiment in Node/Express, and my first non-tutorial venture into AngularJS, I didn't follow my normal test-driven development approach. To me, TDD kind of goes hand-in-hand with planning, so if I'm unsure of the structure my finalized code will take (ie forms, ng-model), it just creates extra work because I have to go back and fix the tests as I figure out what I'm doing.
 
 **Done-ish:**
 
